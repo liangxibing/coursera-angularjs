@@ -1,0 +1,16 @@
+<h3>Found Items Table</h3>
+<table ng-if="0 !== foundItems.length" border="width:100">
+  <tr>
+    <th>name</th>
+    <th>short_name</th>
+    <th>description</th>
+    <th>Remove</th>
+  </tr>
+  <tr ng-repeat="item in foundItems">
+    <td>{{item.name}}</td>
+    <td>{{item.short_name}}</td>
+    <td>{{item.description}}</td>
+    <td><button ng-click="onRemove({itemIndex: $index});">Don't want this one!</button></td>
+  </tr>
+</table>
+<div class="error" ng-if="(0 === foundItems.length) && (true === clicked)">Nothing found</div>
