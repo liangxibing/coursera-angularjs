@@ -1,0 +1,15 @@
+<div id="my-info" class="container">
+  <div ng-if="!myInfoCtrl.userInfo" class="text-center">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+  <div ng-if="myInfoCtrl.userInfo" class="text-center">
+    <div>Name: {{myInfoCtrl.userInfo.first_name}} {{myInfoCtrl.userInfo.last_name}}</div>
+    <div>Email: {{myInfoCtrl.userInfo.email}}</div>
+    <div>Phone: {{myInfoCtrl.userInfo.phone}}</div>
+    <div>Favorite dish as below: </div>
+    <div>{{myInfoCtrl.userInfo.favorite.short_name}}</div>
+    <img class="img-responsive center-block" width="250" height="150" ng-src="{{myInfoCtrl.ApiPath}}/images/{{myInfoCtrl.userInfo.favorite.short_name}}.jpg" alt="{{myInfoCtrl.userInfo.favorite.name}}">
+    <h3>{{myInfoCtrl.userInfo.favorite.name}}</h3>
+    <p>{{myInfoCtrl.userInfo.favorite.description}}</p>
+  </div>
+</div>
